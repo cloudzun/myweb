@@ -40,7 +40,7 @@ def get_hostname():
         <body>
             <h3>服务器名称: {{ hostname }}</h3>
             <h3>服务器位置: {{ server_location.location }}</h3>
-            <h3>访问者地址: {{ visitor_location.location }}</h3>
+            <h3>访问者位置: {{ visitor_location.location }}</h3>
             <div id="map"></div>
             <script>
                 var map = L.map('map').fitBounds([
