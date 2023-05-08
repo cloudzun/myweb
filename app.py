@@ -38,9 +38,9 @@ def get_hostname():
             </style>
         </head>
         <body>
-            <h3>1. 当前宿主机的计算机名是: {{ hostname }}</h3>
-            <h3>2. 服务器位置: {{ server_location.location }}</h3>
-            <h3>3. 访问者地址: {{ visitor_ip }} ({{ visitor_location.location }})</h3>
+            <h3>服务器名称: {{ hostname }}</h3>
+            <h3>服务器位置: {{ server_location.location }}</h3>
+            <h3>访问者地址: {{ visitor_location.location }}</h3>
             <div id="map"></div>
             <script>
                 var map = L.map('map').fitBounds([
