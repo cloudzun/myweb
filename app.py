@@ -34,11 +34,13 @@ def get_hostname():
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
             <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
             <style>
-                body {display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;}
                 #map {width: 75vw; height: 75vh;}
             </style>
         </head>
         <body>
+            <h3>服务器名称: {{ hostname }}</h3>
+            <h3>服务器位置: {{ server_location.location }}</h3>
+            <h3>访问者地址: {{ visitor_location.location }}</h3>
             <div id="map"></div>
             <script>
                 var map = L.map('map').fitBounds([
@@ -50,7 +52,7 @@ def get_hostname():
                 }).addTo(map);
 
                 var serverMarker = L.marker([{{ server_location.latitude }}, {{ server_location.longitude }}]).addTo(map);
-                serverMarker.bindPopup("服务器名称: {{ hostname }}<br>服务器位置: {{ server_location.location }}").openPopup();
+                serverMarker.bindPopup("服务器位置: {{ server_location.location }}").openPopup();
 
                 var visitorMarker = L.marker([{{ visitor_location.latitude }}, {{ visitor_location.longitude }}]).addTo(map);
                 visitorMarker.bindPopup("访问者位置: {{ visitor_location.location }}");
